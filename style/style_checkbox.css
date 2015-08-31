@@ -1,0 +1,441 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "MyriadProBold";
+    src: url("../fonts/MyriadProBold/MyriadProBold.eot");
+    src: url("../fonts/MyriadProBold/MyriadProBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/MyriadProBold/MyriadProBold.woff") format("woff"),
+    url("../fonts/MyriadProBold/MyriadProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Sintony-Regular";
+    src: url("../fonts/Sintony-Regular/SintonyRegular.eot");
+    src: url("../fonts/Sintony-Regular/SintonyRegular.woff") format("woff"),
+    url("../fonts/SintonyRegular.ttf") format("truetype"), 
+    url("../fonts/SintonyRegular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {font-family:"SintonyBold";
+    src:url("../fonts/Sintony_bold/Sintony-Bold.eot?") format("eot"),
+    url("../fonts/Sintony_bold/Sintony-Bold.woff") format("woff"),
+    url("../fonts/Sintony_bold/Sintony-Bold.ttf") format("truetype"),
+    url("../fonts/Sintony_bold/Sintony-Bold.svg#Sintony-Bold") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family: "HelveticaRegular";
+    src: url("../fonts/HelveticaRegular/HelveticaRegular.eot");
+    src: url("../fonts/HelveticaRegular/HelveticaRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+    url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Quicksand Light Regular";
+    src: url("../fonts/Quicksand Light Regular/Quicksand Light Regular.eot");
+    src: local('☺'), url("../fonts/Quicksand Light Regular/Quicksand Light Regular.woff") format('woff'),
+    url("../fonts/Quicksand Light Regular/Quicksand Light Regular.ttf") format('truetype'), 
+    url("../fonts/Quicksand Light Regular/Quicksand Light Regular.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LatoBold";
+    src: url("../fonts/LatoBold/LatoBold.eot");
+    src: url("../fonts/LatoBold/LatoBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LatoBold/LatoBold.woff") format("woff"),
+    url("../fonts/LatoBold/LatoBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+.wrap {
+    }
+    .home {}
+    .container {
+        width: 1180px;
+        margin: 0 auto;
+}    
+
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+html, body { background: #333 url("http://codepen.io/images/classy_fabric.png"); }
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+      opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+.nav-dots .nav-dot {
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+    /*.articles {
+        position: relative;
+        padding-bottom: 50px;
+        box-shadow: 0 6px 4px -3px rgba(0, 0, 0, 0.2);;
+        }
+        .cards {
+            display: flex;
+        }
+            .card_item {
+                display: inline-block;
+                width: 280px;
+                margin-right: 20px;
+            }
+                #arc_1{
+                    position: relative;
+                    background: url(../pic/bg-card-1.png) no-repeat center top;
+                }
+                #arc_2{
+                    position: relative;
+                    background: url(../pic/bg-card-2.png) no-repeat center top;
+                }
+                #arc_3{
+                    position: relative;
+                    background: url(../pic/bg-card-3.png) no-repeat center top;
+                }
+                #arc_4{
+                    position: relative;
+                    background: url(../pic/bg-card-4.png) no-repeat center top;
+                }
+                #arc_1-1{
+                    position: relative;
+                    background: url(../pic/bg-card-2.png) no-repeat center top;
+                      }
+                #arc_1-2{
+                    position: relative;
+                    background: url(../pic/bg-card-4.png) no-repeat center top;
+                }
+                #arc_1-3{
+                    position: relative;
+                    background: url(../pic/bg-card-1.png) no-repeat center top;
+                }
+                #arc_1-4{
+                    position: relative;
+                    background: url(../pic/bg-card-3.png) no-repeat center top;
+                }
+                #arc_2-1{
+                    position: relative;
+                    background: url(../pic/bg-card-3.png) no-repeat center top;
+                }
+                #arc_2-2{
+                    position: relative;
+                    background: url(../pic/bg-card-1.png) no-repeat center top;
+                }
+                #arc_2-3{
+                    position: relative;
+                    background: url(../pic/bg-card-4.png) no-repeat center top;
+                }
+                #arc_2-4{
+                    position: relative;
+                    background: url(../pic/bg-card-2.png) no-repeat center top;
+                }
+                #arc_4:last-child {
+                    margin-right: 0;
+                    }
+                    #circle {
+                        position: absolute;
+                        margin: 117px 96px 0;
+                        width: 88px;
+                        height: 88px;
+                        background: #f3f3f3;
+                        -moz-border-radius: 44px;
+                        -webkit-border-radius: 44px;
+                        border-radius: 44px;
+                    }
+                    .avatar {
+                        position: absolute;
+                        margin: 121px 100px 0;
+                    }
+                    .avatar_item {
+                        display: inline;
+                        position: absolute;
+                        margin: 225px 45px 0 32px;
+                        font-family: "HelveticaRegular";
+                        font-size: 18px;
+                        color: #737c85;
+                        line-height: 26px;
+                    }
+                    .card_item_text {
+                        position: absolute;
+                        margin: 295px 22px 0 30px;
+                        font-family: "HelveticaRegular";
+                        font-size: 14px;
+                        color: #929da5;
+                        line-height: 24px;
+                    }
+                    .border{
+                        height: 407px;
+                        width: 260px;
+                        border: 10px solid rgba(99, 198, 174, 0);
+                    }
+                    .card_item:hover > #circle{
+                        background: #63c6ae;
+                        cursor: pointer;
+                    }
+                    .card_item:hover > .avatar_item{
+                        color: #63c6ae;
+                        cursor: pointer;
+                    }
+                    .card_item:hover > .card_item_text{
+                        color: #63c6ae;
+                        cursor: pointer;
+                    }
+                    .card_item:hover > .border{
+                        border: 10px solid #63c6ae;
+                        cursor: pointer;
+                    }
+
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+.slides {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+}
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+    .slides input { display: none; }
+        .slide-container { display: block; }
+            .slide {
+                top: 0;
+                display: block;
+                transform: scale(0);
+                transition: all .7s ease-in-out;
+            }
+                .nav label {
+                    display: none;
+                    position: absolute;
+                    z-index: 9;
+                    cursor: pointer;
+                    transition: opacity .2s;
+                    color: #c3c9ce;
+                    font-size: 30px;
+                    text-align: center;
+                    font-family: "Varela Round", sans-serif;
+                    background-color: rgba(255, 255, 255, .3);
+                }
+                .nav label:hover {opacity: 1;}
+    input:checked + .slide-container .slide {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 1s ease-in-out;
+    }
+    input:checked + .slide-container .nav label {display: block;}
+    .nav{}
+    .prev{
+        margin: 450px 0 0 535px;
+        width: 7px;
+    }
+        .next{
+            margin: 450px 0 0 638px;
+            width: 7px;
+        }
+    .nav-dots {
+        width: 100%;
+        height: 11px;
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+        .nav-dots .nav-dot {
+            width: 8px;
+            height: 8px;
+            margin: 0 2.5px;
+            position: relative;
+            border-radius: 100%;
+            display: inline-block;
+            background-color: #fff;
+            border: 2.5px solid #c3c9ce;
+        }
+        .nav-dots .nav-dot:hover {
+            cursor: pointer;
+            background-color: #929da5;
+            border: 2.5px solid #fff;
+        }
+
+    input#img-1:checked ~ .nav-dots label#img-dot-1,
+    input#img-2:checked ~ .nav-dots label#img-dot-2,
+    input#img-3:checked ~ .nav-dots label#img-dot-3 {
+        background-color: #929da5;
+        border: 2.5px solid #fff;
+    }
+    */
